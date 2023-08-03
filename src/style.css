@@ -1,0 +1,356 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;400;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Kanit:ital,wght@1,600&display=swap");
+
+:root {
+  --before-color: #020024;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100vh;
+}
+
+.mainContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  gap: 20px;
+  background: linear-gradient(
+    148deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(71, 71, 111, 1) 0%,
+    rgba(104, 230, 255, 1) 100%
+  );
+}
+
+.containerLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.containerRight {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 0, "wght" 500, "GRAD" 0, "opsz" 48;
+}
+
+.material-symbols-outlined:hover {
+  font-variation-settings: "FILL" 0, "wght" 500, "GRAD" 0, "opsz" 48;
+  background-color:#c50010;
+  color: white;
+}
+
+
+.titleProjects,
+.titleTodos {
+  font-family: "Kanit", sans-serif;
+  font-weight: 600;
+  color: aliceblue;
+  font-size: 1.3rem;
+  font-style: italic;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.titleProjects span,
+.titleTodos span {
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.displayProjects {
+  min-height: 400px;
+  width: 200px;
+  background-color: aliceblue;
+  border-radius: 5px;
+  box-shadow: 5px 5px 2px #020024;
+}
+
+.displayTodos {
+  max-height: 500px;
+  min-height: 450px;
+  width: 600px;
+  background-color: aliceblue;
+  border-radius: 5px;
+  box-shadow: 0px 5px 2px #020024;
+  overflow: scroll;
+}
+
+.displayPriorityTodos {
+  width: 600px;
+  background-color: aliceblue;
+  border-radius: 5px;
+  box-shadow: 0px 5px 2px #a3000e;
+  overflow: scroll;
+  padding-bottom: 5px;
+  padding-top: 5px;
+}
+
+
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 748px;
+  top: 270px;
+  width: 13%;
+  height: auto;
+  overflow: auto; /* Enable scroll if needed */
+  background-color: aliceblue;
+  border: 3px solid #020024;
+  border-radius: 5px;
+}
+
+.modal form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  gap: 30px;
+}
+
+.formTitle {
+  font-family: "Kanit", sans-serif;
+  font-size: 1.2rem;
+  color: #020024;
+  font-style: italic;
+  text-align: center;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.titleNP,
+.tagNP {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+
+.titleTitle,
+.tagTitle {
+  font-family: "Roboto Mono", monospace;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.inputTitleNP {
+  font-family: "Roboto Mono", monospace;
+  font-weight: 600;
+  font-size: 0.9rem;
+  border: 0;
+  border-radius: 20px;
+  padding-inline: 10px;
+  outline: none;
+  width: 150px;
+  text-align: center;
+}
+
+.tagInput {
+  outline: 0;
+  border: 0;
+}
+
+.submitButton {
+    background-color: #020024;
+    color: aliceblue;
+    outline: none;
+    border: 0;
+    width: 30px;
+    height: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.close {
+    padding: 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.projects {
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.allProjects h1 {
+    box-sizing: initial;
+    font-family: "Roboto Mono", monospace;
+    font-size: 1.2rem;
+    color: aliceblue;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 10px;
+    padding-inline: 40px;
+    padding-block: 6px;
+    background-color: #6daec8;
+}
+
+.allProjects h1:active {
+  background-color: aliceblue;
+  box-shadow: inset 0 0 3px #6daec8;
+  color: #6daec8;
+}
+
+.allProjects{
+    margin-bottom: 20px;
+}
+
+.projectCard {
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: center;
+    gap:10px;
+    padding-left: 40px;
+}
+
+.projectCard h1 {
+    font-family: "Roboto Mono", monospace;
+    font-size: 1rem;
+    cursor: pointer;
+    text-align: left;
+}
+
+.projectCard::after {
+    content: "";
+    display: inline-block;
+    width: 115px;
+    height: 2px;
+    background: var(--before-color);
+    margin-top: -5px;
+}
+
+.todos {
+  width: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+
+.todoCard {
+  width: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: center;
+  gap:10px;
+  padding-left: 20px;
+}
+
+.todoCard h1, .priorityCard h1 {
+  font-family: "Roboto Mono", monospace;
+  font-size: 1rem;
+  cursor: pointer;
+  text-align: left;
+}
+
+.todoCard p, .priorityCard p {
+  font-family: "Roboto Mono", monospace;
+  font-size: 0.8rem;
+  cursor: pointer;
+  text-align: left;
+}
+
+.todoCard::after {
+  content: "";
+  display: inline-block;
+  width: 490px;
+  height: 2px;
+  background: #020024;
+  margin-top: -5px;
+}
+
+
+.modalTodo {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 748px;
+  top: 270px;
+  width: 13%;
+  height: auto;
+  overflow: auto; /* Enable scroll if needed */
+  background-color: aliceblue;
+  border: 3px solid #020024;
+  border-radius: 5px;
+}
+
+.modalTodo form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  gap: 30px;
+}
+
+.titleNTodo,
+.contentNTodo {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+
+.contentTitle, .priority, .projectTitle {
+  font-family: "Roboto Mono", monospace;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.inputTitleNTodo,
+.contentInput {
+  font-family: "Roboto Mono", monospace;
+  font-weight: 600;
+  font-size: 0.9rem;
+  border: 0;
+  border-radius: 20px;
+  padding-inline: 10px;
+  outline: none;
+  width: 150px;
+  text-align: center;
+}
+
+#projectChoice {
+  border: 0;
+  outline: 0;
+}
+
+#priorityChoice {
+  border: 0;
+  outline: 0;
+}
+
+.todoMain, .pMain {
+  display: flex;
+  padding-left: 10px;
+  width: 600px;
+  align-items: center;
+}
+
+.todoMain span, .pMain span {
+  cursor: pointer;
+}
